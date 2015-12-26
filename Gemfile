@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby "2.0.0"
 
+# Default engine for views (switching from built-in ERB)
+gem "haml"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
