@@ -1,23 +1,29 @@
+$margin-top:        45px;
+$padding-top:       5px;
+$margin-left:       15px;
+$light-gray-border: 1px solid #eaeaea;
+$light-gray:        #777;
+$standard-gray:     #555;
+$dark-gray:         #222;
+
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
+  margin-top: $margin-top;
+  padding-top: $padding-top;
+  border-top: $light-gray-border;
+  color: $light-gray;
   a {
-    color: #555;
-    &:hover {
-      color: #222;
-    }
+    color: $standard-gray;
+    &:hover
+    { color: $dark-gray; }
   }
-  small {
-    float: left;
-  }
+  small
+  { float: left; }
   ul {
     float: right;
     list-style: none;
     li {
       float: left;
-      margin-left: 15px;
+      margin-left: $margin-left;
     }
   }
 }

@@ -3,7 +3,7 @@
 @import "bootstrap";
 @import "bootstrap/theme"; // optional Bootstrap theme (can be deleted)
 
-// app-wide imports (should come before the page-specific styles)
+// app-wide imports (should come before any page-specific styles)
 @import "universal";
 @import "typography";
 @import "header";

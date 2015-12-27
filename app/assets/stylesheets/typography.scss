@@ -1,24 +1,32 @@
+$general-line-height:   1;
+$paragraph-line-height: 1.7em;
+$font-size:             3em;
+$letter-spacing:        -2px;
+$margin-bottom:         30px;
+$font-weight:           normal;
+$light-gray:            #777;
+
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
+  line-height: $general-line-height;
 }
 
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
-  margin-bottom: 30px;
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  margin-bottom: $margin-bottom;
   text-align: left;
 }
 
 h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
+  font-size: $font-size - 1.8em; // = 1.2em
+  letter-spacing: $letter-spacing + 1px; // = -1px
+  margin-bottom: $margin-bottom;
   text-align: center;
-  font-weight: normal;
-  color: #777;
+  font-weight: $font-weight;
+  color: $light-gray;
 }
 
 p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+  font-size: $font-size - 1.9em; // = 1.1em
+  line-height: $paragraph-line-height;
 }
