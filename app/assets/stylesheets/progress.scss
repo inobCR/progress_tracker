@@ -1,0 +1,16 @@
+$gray-border:   0.2px solid #808080;
+$border-radius: 5px;
+$white:         #FFFFFF;
+$black:         #000000;
+$width-percent: 75%;
+
+.progress-box {
+  border: $gray-border;
+  border-color: $black;
+  border-radius: $border-radius;
+  background-color: $white;
+}
+
+.progress-bar {
+  width: $width-percent;
+}

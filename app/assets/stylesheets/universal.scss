@@ -1,6 +1,11 @@
-$padding-top: 60px;
-$overflow:    auto;
-$resize:      vertical;
+$padding-top:   60px;
+$overflow:      auto;
+$resize:        vertical;
+$margin:        -20px;
+$padding-left:  10px;
+$font-display:  20px;
+$padding:       20px;
+$margin-right:  20px;
 
 body {
   padding-top: $padding-top;
@@ -12,4 +17,25 @@ section {
 
 textarea {
   resize: $resize;
+}
+
+.items-view {
+  margin-right: $margin - 20px; // = -40px
+  margin-left: $margin;
+  align-content: flex-end;
+}
+
+month-display {
+  padding-left: $padding-left;
+  font-size: $font-display;
+  vertical-align: bottom;
+}
+
+.row {
+  padding-bottom: $padding - 10px; // = 10px
+  padding-top: $padding;
+}
+
+#today {
+  margin-right: $margin-right;
 }

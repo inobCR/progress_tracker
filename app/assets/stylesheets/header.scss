@@ -16,7 +16,6 @@ $anchor-decoration: none;
   letter-spacing: $letter-spacing;
   padding-top: $padding-top;
   font-weight: $font-weight;
-  &:hover {
-    text-decoration: $anchor-decoration;
-  }
+  &:hover
+  { text-decoration: $anchor-decoration; }
 }
