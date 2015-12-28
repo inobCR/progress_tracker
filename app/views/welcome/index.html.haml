@@ -12,43 +12,17 @@
   .col-md-5
   .col-md-3
     .btn-group{role: "group"}
-      %button.btn.btn-default.active{type: "button", "aria-label" => "list"}
+      %button.btn.btn-default{type: "button", "data-type" => "list"}
         List
-      %button.btn.btn-default{type: "button", "aria-label" => "list"}
+      %button.btn.btn-default{type: "button", "data-type" => "week"}
         Week
-      %button.btn.btn-default{type: "button", "aria-label" => "list"}
+      %button.btn.btn-default{type: "button", "data-type" => "2-week"}
         2-Week
-      %button.btn.btn-default{type: "button", "aria-label" => "list"}
+      %button.btn.btn-default{type: "button", "data-type" => "month"}
         Month
 
-.row
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Courses
-        %th Due Items
-        %th Due Date
-    %tbody
-      %tr
-        %td MATH 285
-        %td Project #3 - Statistical Analysis
-        %td 12/23/15
-      %tr
-        %td COMP 365
-        %td HW #10 - Registers Implementation
-        %td 12/23/15
-      %tr
-        %td PHYS 300
-        %td (EC) Quiz - Magnetic Fields
-        %td 12/24/15
-      %tr
-        %td COMP 365
-        %td Final Exam - Cumulative Test
-        %td 12/25/15
-      %tr
-        %td PHYS 300
-        %td Final Exam - Ch. 7-12
-        %td 12/26/15
+.row.view-type
+  -# here will be rendered various views of due items (list, week, etc)
 
 .row.progress-box
   %h2 Current Progress
@@ -60,3 +34,23 @@
     %h2 Best Possible GPA: 3.68
   .col-md-8.canvas
     %canvas#canvas
+
+:javascript
+  $("button").click(function(event) {
+    var button_type = $(event.target).data("type");
+
+    switch(button_type) {
+      case "list":
+        $("div.row.view-type").html('#{ j render "welcome/due_items/list_view"}');
+        break;
+      case "week":
+        $("div.row.view-type").html('#{ j render "welcome/due_items/week_view"}');
+        break;
+      case "2-week":
+        $("div.row.view-type").html('#{ j render "welcome/due_items/two_week_view"}');
+        break;
+      case "month":
+        $("div.row.view-type").html('#{ j render "welcome/due_items/month_view"}');
+        break;
+    }
+  });
