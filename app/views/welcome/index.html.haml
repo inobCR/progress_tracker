@@ -14,7 +14,7 @@
     .btn-group{role: "group"}
       %button.btn.btn-default{type: "button", "data-type" => "list"}
         List
-      %button.btn.btn-default{type: "button", "data-type" => "week"}
+      %button.btn.btn-default.active{type: "button", "data-type" => "week"}
         Week
       %button.btn.btn-default{type: "button", "data-type" => "2-week"}
         2-Week
@@ -23,6 +23,8 @@
 
 .row.view-type
   -# here will be rendered various views of due items (list, week, etc)
+  -# rendering default view (current week)
+  = render "welcome/due_items/week_view"
 
 .row.progress-box
   %h2 Current Progress
@@ -38,6 +40,8 @@
 :javascript
   $("button").click(function(event) {
     var button_type = $(event.target).data("type");
+    $("button").removeClass("active");
+    $(event.target).toggleClass("active");
 
     switch(button_type) {
       case "list":

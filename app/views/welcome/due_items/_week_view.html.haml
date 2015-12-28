@@ -1,1 +1,39 @@
-WEEKLY VIEW, YAY
+%table.table.table-striped
+  %thead
+    %tr
+      %th
+      %th= Time.now.strftime("%A, %m/%d/%y")
+      %th= (Time.now + 1.day).strftime("%A, %m/%d/%y")
+      %th= (Time.now + 2.day).strftime("%A, %m/%d/%y")
+      %th= (Time.now + 3.day).strftime("%A, %m/%d/%y")
+      %th= (Time.now + 4.day).strftime("%A, %m/%d/%y")
+      %th= (Time.now + 5.day).strftime("%A, %m/%d/%y")
+      %th= (Time.now + 6.day).strftime("%A, %m/%d/%y")
+  %tbody
+    %tr
+      %td COMP 365
+      %td
+      %td
+      %td HW #10
+      %td
+      %td Final Exam
+      %td
+      %td
+    %tr
+      %td MATH 285
+      %td
+      %td Project #3
+      %td Project #3
+      %td
+      %td
+      %td
+      %td
+    %tr
+      %td PHYS 300
+      %td
+      %td
+      %td
+      %td (EC) Quiz
+      %td
+      %td Final Exam
+      %td
