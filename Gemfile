@@ -21,6 +21,13 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+# Pearson Learning Studio Gems for various API calls
+gem 'learning_studio_authentication', '0.0.1', :path => "vendor/learning_studio_auth"
+gem 'learning_studio_content',        '0.0.1', :path => "vendor/learning_studio_content"
+gem 'learning_studio_core',           '0.0.1', :path => "vendor/learning_studio_core"
+gem 'learning_studio_exams',          '0.0.1', :path => "vendor/learning_studio_exams"
+gem 'learning_studio_grades',         '0.0.1', :path => "vendor/learning_studio_grades"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
