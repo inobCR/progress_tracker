@@ -36,3 +36,9 @@ $column-height: 400px;
   width: $canvas-width;
   height: $canvas-height;
 }
+
+.calendar td {
+  border: 1px solid;
+  height: 100px;
+  width: 200px;
+}
