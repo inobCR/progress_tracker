@@ -40,6 +40,9 @@
 :javascript
   $("button").click(function(event) {
     var button_type = $(event.target).data("type");
+    if (typeof button_type == "undefined")
+    { return; }
+
     $("button").removeClass("active");
     $(event.target).toggleClass("active");
 
