@@ -1,7 +1,7 @@
 class DataFetchController < ApplicationController
 
   def core
-    # puts LearningStudioAuthentication.version
+    puts LearningStudioAuthentication.version
     # boom = LearningStudioAuthentication::VERSION
 
     # app_id            = ENV['APP_ID']
