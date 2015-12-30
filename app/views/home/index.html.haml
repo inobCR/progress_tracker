@@ -24,7 +24,7 @@
 .row.view-type
   -# here will be rendered various views of due items (list, week, etc)
   -# rendering default view (current week)
-  = render "welcome/due_items/week_view"
+  = render "home/due_items/week_view"
 
 .row.progress-box
   %h2 Current Progress
@@ -48,16 +48,16 @@
 
     switch(button_type) {
       case "list":
-        $("div.row.view-type").html('#{ j render "welcome/due_items/list_view"}');
+        $("div.row.view-type").html('#{ j render "home/due_items/list_view"}');
         break;
       case "week":
-        $("div.row.view-type").html('#{ j render "welcome/due_items/week_view"}');
+        $("div.row.view-type").html('#{ j render "home/due_items/week_view"}');
         break;
       case "2-week":
-        $("div.row.view-type").html('#{ j render "welcome/due_items/two_week_view"}');
+        $("div.row.view-type").html('#{ j render "home/due_items/two_week_view"}');
         break;
       case "month":
-        $("div.row.view-type").html('#{ j render "welcome/due_items/month_view"}');
+        $("div.row.view-type").html('#{ j render "home/due_items/month_view"}');
         break;
     }
   });
