@@ -1,25 +1,28 @@
 PATH
-  remote: vendor/learning_studio_auth
+  remote: lib/learning_studio_authentication
   specs:
     learning_studio_authentication (0.0.1)
+      httpclient (~> 2.4, >= 2.4.0)
 
 PATH
-  remote: vendor/learning_studio_content
+  remote: lib/learning_studio_content
   specs:
     learning_studio_content (0.0.1)
 
 PATH
-  remote: vendor/learning_studio_core
+  remote: lib/learning_studio_core
   specs:
     learning_studio_core (0.0.1)
+      httpclient
+      nokogiri
 
 PATH
-  remote: vendor/learning_studio_exams
+  remote: lib/learning_studio_exams
   specs:
     learning_studio_exams (0.0.1)
 
 PATH
-  remote: vendor/learning_studio_grades
+  remote: lib/learning_studio_grades
   specs:
     learning_studio_grades (0.0.1)
 
