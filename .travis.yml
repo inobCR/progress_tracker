@@ -1,11 +1,7 @@
 language: ruby
 rvm: 2.0.0
 services: postgresql
-<<<<<<< HEAD
 before_script:
-=======
-before_install:
->>>>>>> 16d6e7c9dedb80a15d0ada3ceb28887db50d1f4d
   - cd lib/learning_studio_authentication/ext/learning_studio_authentication
   - bundle exec ruby extconfig.rb
 before_script: psql -c 'create database progress_tracker_test;' -U postgres
