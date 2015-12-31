@@ -1,10 +1,14 @@
 language: ruby
+sudo: required
 rvm: 2.0.0
 services: postgresql
-before_install: gem install cryptopp -v '0.0.5'
+before_install:
+  - sudo apt-get install libcrypto++ libcrypto++-dev
+  - gem install cryptopp -v '0.0.5'
 before_script:
   - cd lib/learning_studio_authentication/ext/learning_studio_authentication
   - bundle exec ruby extconfig.rb
+  - make
   - psql -c 'create database progress_tracker_test;' -U postgres
 deploy:
   provider: heroku
