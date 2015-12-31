@@ -1,6 +1,9 @@
 language: ruby
 rvm: 2.0.0
 services: postgresql
+before_script:
+  - cd lib/learning_studio_authentication/ext/learning_studio_authentication
+  - bundle exec ruby extconfig.rb
 before_script: psql -c 'create database progress_tracker_test;' -U postgres
 deploy:
   provider: heroku
