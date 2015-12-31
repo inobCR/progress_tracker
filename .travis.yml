@@ -12,7 +12,6 @@ before_script:
   - cd lib/learning_studio_authentication/ext/learning_studio_authentication && bundle exec ruby extconf.rb # && make <- causes the error hence the comment
   # - cd lib/learning_studio_authentication && rake install
   - psql -c 'create database progress_tracker_test;' -U postgres
-  - cd ../../../..
 deploy:
   provider: heroku
   api_key:
