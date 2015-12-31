@@ -2,7 +2,6 @@ PATH
   remote: lib/learning_studio_authentication
   specs:
     learning_studio_authentication (0.0.1)
-      httpclient (~> 2.4, >= 2.4.0)
 
 PATH
   remote: lib/learning_studio_content
