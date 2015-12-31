@@ -9,8 +9,10 @@ rvm: 2.0.0
 services: postgresql
 before_install: gem install cryptopp -v '0.0.5'
 before_script:
-  - bundle exec ruby lib/learning_studio_authentication/ext/learning_studio_authentication/extconf.rb # && make <- causes the error hence the comment
-  # - cd lib/learning_studio_authentication && rake install
+  - cd lib/learning_studio_authentication/ext/learning_studio_authentication && bundle exec ruby extconf.rb && make && make clean
+  - cd ../../../..
+  - cd lib/learning_studio_authentication && rake install
+  - cd ../..
   - psql -c 'create database progress_tracker_test;' -U postgres
 deploy:
   provider: heroku
@@ -19,5 +21,7 @@ deploy:
   app: tologon-pt
   run:
     - "bundle exec ruby lib/learning_studio_authentication/ext/learning_studio_authentication/extconf.rb"
-    # - "rake install lib/learning_studio_authentication"
+    - "make lib/learning_studio_authentication/ext/learning_studio_authentication"
+    - "make clean lib/learning_studio_authentication/ext/learning_studio_authentication"
+    - "cd lib/learning_studio_authentication && rake install"
     - "rake db:migrate"
