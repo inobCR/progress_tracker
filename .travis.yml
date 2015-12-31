@@ -9,7 +9,7 @@ rvm: 2.0.0
 services: postgresql
 before_install: gem install cryptopp -v '0.0.5'
 before_script:
-  - cd lib/learning_studio_authentication/ext/learning_studio_authentication && bundle exec ruby extconf.rb # && make <- causes the error hence the comment
+  - bundle exec ruby extconf.rb --path lib/learning_studio_authentication/ext/learning_studio_authentication # && make <- causes the error hence the comment
   # - cd lib/learning_studio_authentication && rake install
   - psql -c 'create database progress_tracker_test;' -U postgres
 deploy:
@@ -17,4 +17,7 @@ deploy:
   api_key:
     secure: A79w+oB8PjoWAjsBW7+j9hP1CATcoIRPgcekAZDDqkQ+pvzUQf9pwJ0CACTYQR4TmhXbyIes6Aieu0sjG7xmRQBGp8n5TP6JP/N34nl0i69rgDNF0+SuMPFqmoC2/tn2m456EojRrYrWkqmVEIq4gVUVIX9+n0LwKNTHGBiWKmBtDKtdoH7QpuJGCH2ayrQP0uNF22Ap8doW3kZDp7tz4K2T8legha2CswD109JzYNPSxCMxeHyBFYEEM8tGtMW/jwOcVusFZ3ZlX4RHWeN3V33uHok3K/kF3BMRONun9WrmrmJZhBMj8/OiRADOmJgxAkiG/6BYPZ9FGr9vdp2Z1Ywp95OZ0BKK8zvExD4Tp1medaNaRlpbUjPyYRxibzd2uwjE/NK9IOebcv1dhAbD5VliGI4RwDf+FBbR574306b9985ik+mYyx5Z6jTT90qx02MX1hguPRyiGweImP69ZO/BHXhjPnO+GtCaOhJ/BNCrXToU2EqXdXbyBuRjG2fESkFb4dqMEHo+4R5jc9FczNLmeZUX24Rmu+yRSoQVFsONvs8wzFXq/EZz6bxJ8l0QLZeh421WCxJDfaKDs8fAyR0RN7ZikGFD1LodUmtoaqAD8aQCLciLbKKRJj0p0DpV8XJ0M4TyBIYD387xERHQqJLy52LzzbbPckqY+AA9i8Y=
   app: tologon-pt
-  run: "rake db:migrate"
+  run:
+    - "bundle exec ruby lib/learning_studio_authentication/ext/learning_studio_authentication/extconf.rb"
+    # - "rake install lib/learning_studio_authentication"
+    - "rake db:migrate"
