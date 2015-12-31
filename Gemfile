@@ -22,11 +22,11 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Pearson Learning Studio Gems for various API calls
-# gem 'learning_studio_authentication', '0.0.1', :path => "lib/learning_studio_authentication"
-# gem 'learning_studio_content',        '0.0.1', :path => "lib/learning_studio_content"
-# gem 'learning_studio_core',           '0.0.1', :path => "lib/learning_studio_core"
-# gem 'learning_studio_exams',          '0.0.1', :path => "lib/learning_studio_exams"
-# gem 'learning_studio_grades',         '0.0.1', :path => "lib/learning_studio_grades"
+gem 'learning_studio_authentication', '0.0.1', :path => "lib/learning_studio_authentication"
+gem 'learning_studio_content',        '0.0.1', :path => "lib/learning_studio_content"
+gem 'learning_studio_core',           '0.0.1', :path => "lib/learning_studio_core"
+gem 'learning_studio_exams',          '0.0.1', :path => "lib/learning_studio_exams"
+gem 'learning_studio_grades',         '0.0.1', :path => "lib/learning_studio_grades"
 # required gems for Pearson Learning Studio
 gem 'cryptopp', '~> 0.0.5'
 gem 'httpclient', '~> 2.7', '>= 2.7.0.1'

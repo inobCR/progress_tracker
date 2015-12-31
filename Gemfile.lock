@@ -1,3 +1,28 @@
+PATH
+  remote: lib/learning_studio_authentication
+  specs:
+    learning_studio_authentication (0.0.1)
+
+PATH
+  remote: lib/learning_studio_content
+  specs:
+    learning_studio_content (0.0.1)
+
+PATH
+  remote: lib/learning_studio_core
+  specs:
+    learning_studio_core (0.0.1)
+
+PATH
+  remote: lib/learning_studio_exams
+  specs:
+    learning_studio_exams (0.0.1)
+
+PATH
+  remote: lib/learning_studio_grades
+  specs:
+    learning_studio_grades (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -168,6 +193,11 @@ DEPENDENCIES
   httpclient (~> 2.7, >= 2.7.0.1)
   jbuilder (~> 2.0)
   jquery-rails
+  learning_studio_authentication (= 0.0.1)!
+  learning_studio_content (= 0.0.1)!
+  learning_studio_core (= 0.0.1)!
+  learning_studio_exams (= 0.0.1)!
+  learning_studio_grades (= 0.0.1)!
   pg (~> 0.15)
   rails (= 4.2.5)
   rails_12factor
