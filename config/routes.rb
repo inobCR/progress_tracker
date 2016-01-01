@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get 'core', to: 'data_fetch#core'
-
+  # Data fetch sample pages (not for actual use, just demonstration purposes)
+  get 'core',   to: 'data_fetch#core'
+  get 'exams',  to: 'data_fetch#exams'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
