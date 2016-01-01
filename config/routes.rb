@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'content',        to: 'data_fetch#content'
   get 'announcements',  to: 'data_fetch#announcements'
   get 'schedules',      to: 'data_fetch#schedules'
+  get 'course_info',    to: 'data_fetch#course_info'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
