@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'schedules',      to: 'data_fetch#schedules'
   get 'course_info',    to: 'data_fetch#course_info'
   get 'terms',          to: 'data_fetch#terms'
+  get 'users',          to: 'data_fetch#users'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
