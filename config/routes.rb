@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'courses',        to: 'courses#index'
   get 'courses/:id',    to: 'courses#course'
 
+  # Progress page
+  get 'progress',       to: 'home#progress'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
