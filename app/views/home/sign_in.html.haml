@@ -1,0 +1,12 @@
+%row
+  %col-md-6.col-md-offset-3
+    %form.form-signin
+      %h1.form-signin-heading Progress Tracker
+      %label.sr-only{for: "input_email"} Email address
+      %input.form-control#input_email{type: "email", placeholder: "Email address"}
+      %label.sr-only{for: "input_password"} Password
+      %input.form-control#input_password{type: "password", placeholder: "Password"}
+      %checkbox
+        %label
+          %input{type: "checkbox", value: "remember-me"} Remember Me
+      %button.btn.btn-lg.btn-primary.btn-block{type: "submit"} Sign In

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   get 'terms',          to: 'data_fetch#terms'
   get 'users',          to: 'data_fetch#users'
 
+  # Sign-in page (probably will need re-work later)
+  get 'sign_in',        to: 'home#sign_in'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
