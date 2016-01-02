@@ -1,2 +1,132 @@
-%h1 Courses#course
-%p Find me in app/views/courses/course.html.haml
+.row
+  %h1 MATH 285 - Probability & Statistics for Engineers
+
+.row
+  .panel-group#accordion{role: "tablist", "aria-multiselectable" => "true"}
+    .panel.panel-default
+      .panel-heading#heading-1{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-1", "aria-expanded" => "true", "aria-controls" => "collapse-1"}
+            Announcements
+      .panel-collapse.collapse#collapse-1.in{role: "tabpanel", "aria-labelledby" => "heading-1"}
+        .panel-body
+          %table.table
+            %thead
+              %tr
+                %th Update
+                %th Date
+            %tbody
+              %tr
+                %td The Academic Affairs office would like to announce that the school will be offering new courses starting next academic year.
+                %td= Time.now.strftime("%A, %m/%d/%y")
+              %tr
+                %td The new courses are an effort to improve the quality of education in our college.
+                %td= Time.now.strftime("%A, %m/%d/%y")
+              %tr
+                %td The new courses are a result of discussions among the college board and professors about competing with global standards.
+                %td= (Time.now + 1.day).strftime("%A, %m/%d/%y")
+              %tr
+                %td It is our way of advancing education and ensuring that our students are at par with other universities.
+                %td= (Time.now + 2.day).strftime("%A, %m/%d/%y")
+              %tr
+                %td We enjoin everyone qualified to enroll in the new courses.  We are hoping that this development will help you advance your career.
+                %td= (Time.now + 3.day).strftime("%A, %m/%d/%y")
+
+
+    .panel.panel-default
+      .panel-heading#heading-2{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-2", "aria-expanded" => "true", "aria-controls" => "collapse-2"}
+            Deadlines
+      .panel-collapse.collapse#collapse-2{role: "tabpanel", "aria-labelledby" => "heading-2"}
+        .panel-body
+          %table.table.table-striped
+            %thead
+              %tr
+                %th Due Items
+                %th Due Date
+            %tbody
+              %tr
+                %td Project #3 - Statistical Analysis
+                %td= Time.now.strftime("%A, %m/%d/%y")
+              %tr
+                %td HW #10 - Registers Implementation
+                %td= Time.now.strftime("%A, %m/%d/%y")
+              %tr
+                %td (EC) Quiz - Magnetic Fields
+                %td= (Time.now + 1.day).strftime("%A, %m/%d/%y")
+              %tr
+                %td Final Exam - Cumulative Test
+                %td= (Time.now + 2.day).strftime("%A, %m/%d/%y")
+              %tr
+                %td Final Exam - Chapters 7-12
+                %td= (Time.now + 3.day).strftime("%A, %m/%d/%y")
+
+    .panel.panel-default
+      .panel-heading#heading-3{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-3", "aria-expanded" => "true", "aria-controls" => "collapse-3"}
+            Progress
+      .panel-collapse.collapse#collapse-3{role: "tabpanel", "aria-labelledby" => "heading-3"}
+        .panel-body
+          %h2 Current Progress
+          .progress
+            .progress-bar.progress-bar-striped.active{role: "progressbar"}
+              8 / 12
+          .col-md-4.progress-gpa
+            %h2 Current GPA: 3.47
+            %h2 Best Possible GPA: 3.68
+          .col-md-8.canvas
+            %canvas#canvas
+
+    .panel.panel-default
+      .panel-heading#heading-4{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-4", "aria-expanded" => "true", "aria-controls" => "collapse-4"}
+            Syllabus
+      .panel-collapse.collapse#collapse-4{role: "tabpanel", "aria-labelledby" => "heading-4"}
+        .panel-body
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+          3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+          eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+          3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+          eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+          assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+          sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
+          raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+
+:javascript
+  data = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+      {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,1)",
+        pointColor : "rgba(220,220,220,1)",
+        pointStrokeColor : "#fff",
+        data : [65,59,90,81,56,55,40]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,1)",
+        pointColor : "rgba(151,187,205,1)",
+        pointStrokeColor : "#fff",
+        data : [28,48,40,19,96,27,100]
+      }
+    ]
+  }
+
+  $("a[href=#collapse-3]").click(function(event) {
+    // very odd, yet working example to add graph to expandable tab
+    // adding time delay seems like the only option that works
+    setTimeout(continueExecution, 50);
+  });
+
+  function continueExecution() {
+    new Chart($("#canvas").get(0).getContext("2d")).Line(data);
+  }
