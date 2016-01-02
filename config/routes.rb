@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   # Sign-in page (probably will need re-work later)
   get 'sign_in',        to: 'home#sign_in'
 
+  # Course-related pages
+  get 'courses',        to: 'courses#index'
+  get 'courses/:id',    to: 'courses#course'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
