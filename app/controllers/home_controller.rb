@@ -7,4 +7,7 @@ class HomeController < ApplicationController
 
   def progress
   end
+
+  def settings
+  end
 end
