@@ -1,4 +1,4 @@
-$gray-border:   0.2px solid #808080;
+$gray-border:   1px solid #808080;
 $border-radius: 5px;
 $white:         #FFFFFF;
 $black:         #000000;
@@ -7,11 +7,26 @@ $canvas-width:  100%;
 $canvas-height: 100%;
 $column-height: 400px;
 
-.progress-box {
+.total-progress-box {
   border: $gray-border;
   border-color: $black;
   border-radius: $border-radius;
   background-color: $white;
+}
+
+.course-progress-box {
+  border: $gray-border;
+  border-color: $black;
+  border-radius: $border-radius;
+  background-color: $white;
+  .canvas, .progress-gpa {
+    height: $canvas-height;
+    padding-top: 5%;
+  }
+  #canvas-1, #canvas-2, #canvas-3 {
+    height: 70%;
+    width: 100%;
+  }
 }
 
 .progress-bar {
@@ -26,6 +41,15 @@ $column-height: 400px;
 .progress {
   width: 97%;
   margin-left: 10px;
+  .bar-1 {
+    width: 75%;
+  }
+  .bar-2 {
+    width: 95%;
+  }
+  .bar-3 {
+    width: 87%;
+  }
 }
 
 .canvas {

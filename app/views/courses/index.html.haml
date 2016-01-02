@@ -1,2 +1,163 @@
-%h1 Courses#index
-%p Find me in app/views/courses/index.html.haml
+.row
+  .col-md-6
+    %h2 Courses
+  .col-md-6
+    %h2.term Fall 2015
+
+.row
+  .col-md-3.course-line-item
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Probability & Statistics
+      .panel-body
+        %ul.list-group
+          %li.list-group-item Course Info
+          %li.list-group-item Syllabus
+          %li.list-group-item Announcements
+          %li.list-group-item Progress
+  .col-md-6.course-progress-box.course-line-item
+    %h4 Current Progress
+    .progress
+      .progress-bar.bar-1.progress-bar-striped.active{role: "progressbar"}
+        8 / 12
+    .col-md-4.progress-gpa
+      %h5 Current GPA: 3.47
+      %h5 Best Possible GPA: 3.68
+    .col-md-8.canvas
+      %canvas#canvas-1
+  .col-md-3.course-line-item
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Due Items
+          %th Date
+      %tbody
+        %tr
+          %td Project #3
+          %td 12/23/15
+        %tr
+          %td HW #10
+          %td 12/23/15
+        %tr
+          %td (EC) Quiz
+          %td 12/24/15
+        %tr
+          %td Final Exam
+          %td 12/25/15
+        %tr
+          %td Final Exam
+          %td 12/26/15
+
+.row
+  .col-md-3.course-line-item
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Computer Architecture
+      .panel-body
+        %ul.list-group
+          %li.list-group-item Course Info
+          %li.list-group-item Syllabus
+          %li.list-group-item Announcements
+          %li.list-group-item Progress
+  .col-md-6.course-progress-box.course-line-item
+    %h4 Current Progress
+    .progress
+      .progress-bar.bar-2.progress-bar-striped.active{role: "progressbar"}
+        10 / 12
+    .col-md-4.progress-gpa
+      %h5 Current GPA: 3.88
+      %h5 Best Possible GPA: 4.00
+    .col-md-8.canvas
+      %canvas#canvas-2
+  .col-md-3.course-line-item
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Due Items
+          %th Date
+      %tbody
+        %tr
+          %td Project #3
+          %td 12/23/15
+        %tr
+          %td HW #10
+          %td 12/23/15
+        %tr
+          %td (EC) Quiz
+          %td 12/24/15
+        %tr
+          %td Final Exam
+          %td 12/25/15
+        %tr
+          %td Final Exam
+          %td 12/26/15
+
+.row
+  .col-md-3.course-line-item
+    .panel.panel-default
+      .panel-heading
+        %h3.panel-title Engineering Physics II
+      .panel-body
+        %ul.list-group
+          %li.list-group-item Course Info
+          %li.list-group-item Syllabus
+          %li.list-group-item Announcements
+          %li.list-group-item Progress
+  .col-md-6.course-progress-box.course-line-item
+    %h4 Current Progress
+    .progress
+      .progress-bar.bar-3.progress-bar-striped.active{role: "progressbar"}
+        9 / 12
+    .col-md-4.progress-gpa
+      %h5 Current GPA: 3.76
+      %h5 Best Possible GPA: 3.85
+    .col-md-8.canvas
+      %canvas#canvas-3
+  .col-md-3.course-line-item
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Due Items
+          %th Date
+      %tbody
+        %tr
+          %td Project #3
+          %td 12/23/15
+        %tr
+          %td HW #10
+          %td 12/23/15
+        %tr
+          %td (EC) Quiz
+          %td 12/24/15
+        %tr
+          %td Final Exam
+          %td 12/25/15
+        %tr
+          %td Final Exam
+          %td 12/26/15
+
+
+:javascript
+  data = {
+    labels : ["January","February","March","April","May","June","July"],
+    datasets : [
+      {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,1)",
+        pointColor : "rgba(220,220,220,1)",
+        pointStrokeColor : "#fff",
+        data : [65,59,90,81,56,55,40]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,1)",
+        pointColor : "rgba(151,187,205,1)",
+        pointStrokeColor : "#fff",
+        data : [28,48,40,19,96,27,100]
+      }
+    ]
+  }
+
+  new Chart($("#canvas-1").get(0).getContext("2d")).Line(data);
+  new Chart($("#canvas-2").get(0).getContext("2d")).Line(data);
+  new Chart($("#canvas-3").get(0).getContext("2d")).Line(data);

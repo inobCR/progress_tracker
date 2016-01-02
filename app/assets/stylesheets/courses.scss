@@ -1,3 +1,24 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.term {
+  float: right;
+}
+
+.list-group {
+  box-shadow: none;
+  margin-bottom: 0px;
+}
+
+.list-group-item {
+  border: none;
+  padding-left: 0px;
+}
+
+.course-line-item {
+  height: 225px;
+  .progress {
+    margin-bottom: 5px;
+  }
+}
