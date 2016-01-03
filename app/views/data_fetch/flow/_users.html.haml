@@ -1,0 +1,10 @@
+%table.table
+  %thead
+    %tr
+      %th Key
+      %th Value
+  %tbody
+    - flat_hash(@content).each do |key, value|
+      %tr
+        %td= key
+        %td= value

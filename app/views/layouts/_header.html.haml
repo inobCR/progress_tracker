@@ -16,6 +16,7 @@
         %li.dropdown
           = link_to "Data Fetch", '#', class: "dropdown-toggle", "data-toggle" => "dropdown", "role" => "button", "aria-haspopup" => "true", "aria-expanded" => "false"
           %ul.dropdown-menu
+            %li= link_to "Complete Flow", flow_path
             %li= link_to "Core",          core_path
             %li= link_to "Exams",         exams_path
             %li= link_to "Grades",        grades_path

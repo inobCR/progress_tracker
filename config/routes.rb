@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # Data fetch sample pages (not for actual use, just demonstration purposes)
+  get 'flow',           to: 'data_fetch#flow'
   get 'core',           to: 'data_fetch#core'
   get 'exams',          to: 'data_fetch#exams'
   get 'grades',         to: 'data_fetch#grades'
