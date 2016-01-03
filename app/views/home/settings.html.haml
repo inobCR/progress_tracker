@@ -1,0 +1,24 @@
+.row
+  %h1 Settings
+
+.row
+  %form
+    .form-group.row
+      .col-sm-2.form-control-label.text-right.settings-text{label: "inputUsername"} Username
+      .col-sm-10
+        %input.form-control#inputUsername{type: "text", placeholder: "Teeling"}
+    .form-group.row
+      .col-sm-2.form-control-label.text-right.settings-text{label: "inputFirstName"} First Name
+      .col-sm-10
+        %input.form-control#inputFirstName{type: "text", placeholder: "Tologon"}
+    .form-group.row
+      .col-sm-2.form-control-label.text-right.settings-text{label: "inputLastName"} Last Name
+      .col-sm-10
+        %input.form-control#inputLastName{type: "text", placeholder: "Eshimkanov"}
+    .form-group.row
+      .col-sm-2.form-control-label.text-right.settings-text{label: "inputEmail"} Email
+      .col-sm-10
+        %input.form-control#inputEmail{type: "email", placeholder: "teshimkanov@gmail.com", disabled: true}
+    .form-group.row
+      .col-sm-offset-2.col-sm-10
+        %button.btn.btn-default{type: "submit"} Update Profile
