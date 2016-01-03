@@ -1,0 +1,15 @@
+- unless step
+  %p Couldn't retrieve data from API; check the logs for details.
+- else
+  %p= step if step.is_a? (String)
+  - if step.is_a? (Hash)
+    %table.table
+      %thead
+        %tr
+          %th Key
+          %th Value
+      %tbody
+        - step.each do |key, value|
+          %tr
+            %td= key
+            %td= value

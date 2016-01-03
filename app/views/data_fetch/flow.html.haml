@@ -1,5 +1,6 @@
 .row
   .panel-group#accordion{role: "tablist", "aria-multiselectable" => "true"}
+    / Step #1 - Authentication / Users APIs
     .panel.panel-default
       .panel-heading#heading-1{role: "tab"}
         %h4.panel-title
@@ -7,10 +8,74 @@
             Step #1 - Authentication / Users APIs
       .panel-collapse.collapse#collapse-1.in{role: "tabpanel", "aria-labelledby" => "heading-1"}
         .panel-body
-          - if @content.nil?
-            %p Couldn't retrieve data from API; check the logs for details.
-          - else
-            - if @content.is_a? (String)
-              %p= @content
-            - else
-              = render 'data_fetch/flow/users'
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_one]
+
+    / Step #2 - Terms API
+    .panel.panel-default
+      .panel-heading#heading-2{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-2", "aria-expanded" => "true", "aria-controls" => "collapse-2"}
+            Step #2 - Terms API
+      .panel-collapse.collapse#collapse-2{role: "tabpanel", "aria-labelledby" => "heading-2"}
+        .panel-body
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_two]
+
+    / Step #3 - Course Info APIs
+    .panel.panel-default
+      .panel-heading#heading-3{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-3", "aria-expanded" => "true", "aria-controls" => "collapse-3"}
+            Step #3 - Course Info APIs
+      .panel-collapse.collapse#collapse-3{role: "tabpanel", "aria-labelledby" => "heading-3"}
+        .panel-body
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_three]
+
+    / Step #4.1 - Course Content APIs
+    .panel.panel-default
+      .panel-heading#heading-4-1{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-4-1", "aria-expanded" => "true", "aria-controls" => "collapse-4-1"}
+            Step #4.1 - Course Content APIs
+      .panel-collapse.collapse#collapse-4-1{role: "tabpanel", "aria-labelledby" => "heading-4-1"}
+        .panel-body
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_four_one]
+
+    / Step #4.2 - Course Content APIs
+    .panel.panel-default
+      .panel-heading#heading-4-2{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-4-2", "aria-expanded" => "true", "aria-controls" => "collapse-4-2"}
+            Step #4.2 - Course Content APIs
+      .panel-collapse.collapse#collapse-4-2{role: "tabpanel", "aria-labelledby" => "heading-4-2"}
+        .panel-body
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_four_two]
+
+    / Step #5.1 - Grades APIs
+    .panel.panel-default
+      .panel-heading#heading-5-1{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-5-1", "aria-expanded" => "true", "aria-controls" => "collapse-5-1"}
+            Step #5.1 - Grades APIs
+      .panel-collapse.collapse#collapse-5-1{role: "tabpanel", "aria-labelledby" => "heading-5-1"}
+        .panel-body
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_five_one]
+
+    / Step #5.2 - Grades APIs
+    .panel.panel-default
+      .panel-heading#heading-5-2{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-5-2", "aria-expanded" => "true", "aria-controls" => "collapse-5-2"}
+            Step #5.2 - Grades APIs
+      .panel-collapse.collapse#collapse-5-2{role: "tabpanel", "aria-labelledby" => "heading-5-2"}
+        .panel-body
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_five_two]
+
+    / Step #5.3 - Grades APIs
+    .panel.panel-default
+      .panel-heading#heading-5-3{role: "tab"}
+        %h4.panel-title
+          %a{role: "button", "data-toggle" => "collapse", "data-parent" => "#accordion", href: "#collapse-5-3", "aria-expanded" => "true", "aria-controls" => "collapse-5-3"}
+            Step #5.3 - Grades APIs
+      .panel-collapse.collapse#collapse-5-3{role: "tabpanel", "aria-labelledby" => "heading-5-3"}
+        .panel-body
+          = render 'data_fetch/flow/tab_view', step: @requests[:step_five_three]

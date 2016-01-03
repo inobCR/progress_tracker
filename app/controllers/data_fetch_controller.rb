@@ -514,15 +514,21 @@ class DataFetchController < ApplicationController
   end
 
   def flow
-    api_uri           = "/me"
+    @requests = Hash.new
 
-    begin
-      response = @basic_service.request('GET', api_uri)
-      @content = "#{response.status_code} : #{response.status_message}" if response.error?
-      @content = JSON.parse(response.content) unless response.error?
-    rescue Exception => e
-      puts "Exception from request calling #{api_uri} : #{e.message}"
-    end
+    # Step #1 - Authentication / Users APIs
+    step_one
+    # Step #2 - Terms APIs
+    step_two
+    # Step #3 - Course Info APIs
+    step_three
+    # Step #4 - Course Content APIs
+    step_four_one
+    step_four_two
+    # Step #5 - Grades APIs
+    step_five_one
+    step_five_two
+    step_five_three
   end
 
   private
@@ -561,5 +567,112 @@ class DataFetchController < ApplicationController
       # handles all the work of making an API call
       @basic_service = LearningStudioCore::BasicService.new(factory)
       @basic_service.use_oauth2(username_student, password)
+    end
+
+    # TODO: for future use (possibly w/ models in place)
+    def store(key, value)
+      @values ||= Hash.new
+      @values[key.parameterize.underscore.to_sym] = value
+    end
+
+    def flat_hash(h, k = [])
+      new_hash = {}
+      h.each_pair do |key, value|
+        value = value.inject(:merge) if value.kind_of?(Array)
+        if value.is_a? (Hash)
+          new_hash.merge!(flat_hash(value, k + [key]))
+        else
+          new_hash[k + [key]] = value
+        end
+      end
+      new_hash
+    end
+
+    def step_one
+      api_uri = "/me.json"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_one] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_one] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
+    end
+
+    def step_two
+      api_uri = "/me/terms.json"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_two] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_two] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
+    end
+
+    def step_three
+      api_uri = "/me/courses.json?expand=course"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_three] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_three] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
+    end
+
+    def step_four_one
+      api_uri = "/me/courses/12409836/items.json"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_four_one] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_four_one] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
+    end
+
+    def step_four_two
+      api_uri = "/me/courses/12409836/items/20074752353/schedule.json"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_four_two] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_four_two] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
+    end
+
+    def step_five_one
+      api_uri = "/me/courses/12409836/gradebook/userGradebookItems.json?expand=grade"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_five_one] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_five_one] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
+    end
+
+    def step_five_two
+      api_uri = "/me/courses/12409836/coursegradetodate.json"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_five_two] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_five_two] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
+    end
+
+    def step_five_three
+      api_uri = "/me/courses/12409836/gradebook/userGradebookItemsTotals.json"
+      begin
+        resp = @basic_service.request('GET', api_uri)
+        @requests[:step_five_three] = "#{resp.status_code} : #{resp.status_message} : #{api_uri}" if resp.error?
+        @requests[:step_five_three] = flat_hash(JSON.parse(resp.content)) unless resp.error?
+      rescue Exception => e
+        puts "Exception from request calling #{api_uri} : #{e.message}"
+      end
     end
 end
