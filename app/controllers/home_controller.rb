@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  before_action :authenticate_student!
+
   def sign_in
   end
 

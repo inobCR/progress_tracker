@@ -6,6 +6,10 @@ ruby "2.0.0"
 gem 'devise'
 # Default engine for views (switching from built-in ERB)
 gem "haml"
+# Transformation from ERB to Haml
+# to keep original ERBs -> rake haml:convert_erbs
+# to get rid of ERBs    -> rake haml:replace_erbs
+gem "erb2haml"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record

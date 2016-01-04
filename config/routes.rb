@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   # Course-related pages
   get 'courses',        to: 'courses#index'
   get 'courses/:id',    to: 'courses#course'
+  get 'courses',        to: 'devise/courses#index'
+  get 'courses/:id',    to: 'devise/courses#course'
 
   # Progress page
   get 'progress',       to: 'home#progress'

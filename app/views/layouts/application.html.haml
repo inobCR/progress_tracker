@@ -16,7 +16,11 @@
       %script{src: '//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js'}
       %script{src: 'https://oss.maxcdn.com/respond/1.4.2/respond.min.js'}
   %body
-    = render "layouts/header"
-    .container
-      = yield
-      = render "layouts/footer"
+    - unless student_signed_in?
+      .container
+        = yield
+    - else
+      = render "layouts/header"
+      .container
+        = yield
+        = render "layouts/footer"
