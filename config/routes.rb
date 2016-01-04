@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :students
   root 'home#index'
 
   # Data fetch sample pages (not for actual use, just demonstration purposes)

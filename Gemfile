@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 ruby "2.0.0"
 
+# Default authentication
+gem 'devise'
 # Default engine for views (switching from built-in ERB)
 gem "haml"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
