@@ -4,6 +4,8 @@
       .alert.alert-danger{role: "#{key}"}= value
     = form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f|
       %h1.form-signin-heading.text-center Progress Tracker
+      %h5.form-signin-heading.text-center login: teshimkanov.student@gmail.com
+      %h5.form-signin-heading.text-center password: password
       .field
         = f.label :email
         %br/
