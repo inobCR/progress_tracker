@@ -27,7 +27,8 @@ Rails.application.routes.draw do
   get 'progress',       to: 'home#progress'
 
   # Settings page
-  get 'settings',       to: 'home#settings'
+  get   'settings',     to: 'home#settings'
+  post  'settings',     to: 'home#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

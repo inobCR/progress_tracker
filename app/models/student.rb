@@ -69,11 +69,13 @@ class Student < ActiveRecord::Base
         puts "Exception from request calling #{api_uri} : #{e.message}"
       end
 
-      self.pearson_id     = @response["me"]["id"]
-      self.username       = @response["me"]["userName"]
-      self.first_name     = @response["me"]["firstName"]
-      self.last_name      = @response["me"]["lastName"]
-      self.email_address  = @response["me"]["emailAddress"]
-      self.client_string  = @response["me"]["clientString"]
+      unless @response.nil?
+        self.pearson_id     ||= @response["me"]["id"]
+        self.username       ||= @response["me"]["userName"]
+        self.first_name     ||= @response["me"]["firstName"]
+        self.last_name      ||= @response["me"]["lastName"]
+        self.email_address  ||= @response["me"]["emailAddress"]
+        self.client_string  ||= @response["me"]["clientString"]
+      end
     end
 end
