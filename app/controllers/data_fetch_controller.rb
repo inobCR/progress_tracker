@@ -565,7 +565,7 @@ class DataFetchController < ApplicationController
       # Requests
       # --------
       # handles all the work of making an API call
-      @basic_service = LearningStudioCore::BasicService.new(factory)
+      @basic_service ||= LearningStudioCore::BasicService.new(factory)
       @basic_service.use_oauth2(username_student, password)
     end
 
